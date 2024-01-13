@@ -3,6 +3,8 @@
 
 * Trainable Dataset : [News and Stock Prices](https://drive.google.com/drive/folders/1CdvyloYGhTefrTkrntsWQCgRmpnEwODZ?usp=sharing)
 
+There are other dataset files to show steps of data collection. However, `news_labels_en.csv` is final version of dataset to use in training 
+
 ## Installation
 Required packages:
 - jupyter
