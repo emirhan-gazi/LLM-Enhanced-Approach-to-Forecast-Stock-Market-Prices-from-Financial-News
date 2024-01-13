@@ -17,7 +17,18 @@ Required packages:
 To install required packages run `pip install -r requirements.txt` in the project directory.
 
 ## Scraping
-To scrape news from bloomberght.com run `python3 scraper.py` in the project directory. Scraped news will be saved in `news.csv` file.
+To scrape news from [BloombergHT](https://www.bloomberght.com) we used `DataCollection/news_scraping.ipynb` notebook. To scrape stock price changes we used `DataCollection/stock_market_prices.ipynb` notebook. You can run these notebooks to scrape data. 
+
+You can arrange date range in the notebooks. Default date range is 31.08.2023 - 30.09.2023. You can change date range by changing `initial_date` and `end_date` variables in the notebooks.
+
+## Preprocessing
+
+To preprocess scraped data we used `DataCollection/data_processing.ipynb` notebook. These code combines scraped news and stock market prices data. THen it changes stock price changes to labels. After that it uses : 
+```python
+from googletrans import Translator 
+import googletrans
+```
+to translate news to English. You can run this notebook to get `news_labels_en.csv` file.
 
 ## Training 
 
@@ -72,19 +83,29 @@ Model comparison results are in the [Results](https://drive.google.com/drive/fol
 
 * Figures for Hyperparameter Tuning (In the `Figures/hyper_figures` folder):
     - Accuracy
-    ![Hyperparameter Tuning](Figures/hyper_figures/ASTOR_Head_Accuracy.png)
+
+        ![Hyperparameter Tuning](Figures/hyper_figures/ASTOR_Head_Accuracy.png)
+
     - Time 
-    ![Hyperparameter Tuning](Figures/hyper_figures/ASTOR_Head_Time.png)
+
+        ![Hyperparameter Tuning](Figures/hyper_figures/ASTOR_Head_Time.png)
+
     - Learning Rate Change
-    ![Hyperparameter Tuning](Figures/hyper_figures/ASTOR_Learning_Accuracy.png)
+
+        ![Hyperparameter Tuning](Figures/hyper_figures/ASTOR_Learning_Accuracy.png)
+
     - Time (on BERT)
-    ![Hyperparameter Tuning](Figures/hyper_figures/Bert_LoRA_Time.png)
+
+        ![Hyperparameter Tuning](Figures/hyper_figures/Bert_LoRA_Time.png)
 
 * Figures for Model Comparison (In the `Figures` folder):
     - Accuracy
-    ![Model Comparison](Figures/Model_comparison.png)
+
+        ![Model Comparison](Figures/Model_comparison.png)
+
     - Time 
-    ![Model Comparison](Figures/Model_comparison_time.png)
+
+        ![Model Comparison](Figures/Model_comparison_time.png)
 
 ## Interaction 
 
